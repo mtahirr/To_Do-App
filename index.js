@@ -8,3 +8,4 @@ app.get('/',(req,res)=>{
 app.listen(port,()=>{
 console.log(`server listen http://localhost:${port}`); 
 });
+// run nodejs project 'npm run dev'

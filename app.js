@@ -5,6 +5,5 @@ const todoRouter = require('./routes/todo.route');
 const app = express();
 app.use(body_parser.json());
 app.use('/',userRouter);
-app.use('/',todoRouter);
-
+app.use('/',todoRouter); 
 module.exports = app;
