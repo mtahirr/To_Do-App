@@ -29,3 +29,20 @@ exports.getTodoList = async (req,res,next)=>{
  next(err);
   }
 }
+exports.updateData = async (req,res,next)=>{
+  try{
+    const id = req.params.id;
+    const updateResponse = req.body;
+    const updatedResponse =  await TodoServices.updateResponse(id,updateResponse);
+
+  
+    console.log('getTodoList');
+    res.status(200).json  ({
+      updatedResponse});
+    
+  }catch(err){
+    console.log(err);
+    res.status(500).json({error:'Internal server error'});
+ next(err);
+  }
+}

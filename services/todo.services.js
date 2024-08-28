@@ -22,6 +22,19 @@ class TodoServices{
         }
  
      }
+     static async updateResponse(userId, updateResponse){
+      try{
+       const updatedResponse = await todoModel.findByIdAndUpdate(userId,updateResponse, {
+       new:true,
+       runValidators:true
+       });
+    
+     
+       return updatedResponse;
+      }catch(e){
+       throw e;
+      }
 
+   }
 }
 module.exports = TodoServices;
